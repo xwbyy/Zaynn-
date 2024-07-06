@@ -1,1 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aku Zayn</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page {
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow-y: auto; /* Mengaktifkan scrollbar jika konten lebih panjang dari tinggi layar */
+        }
+
+        .page.active {
+            display: flex;
+        }
+
+        .note-container {
+            background-color: #34495e;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            max-width: 80%; /* Lebar maksimum kontainer */
+            margin: auto; /* Posisi kontainer di tengah */
+        }
+
+        .note-container h1 {
+            margin-top: 0;
+            font-size: 2em;
+            color: #e74c3c;
+        }
+
+        .note-container p {
+            line-height: 1.6;
+            font-size: 1em;
+            margin-bottom: 1em;
+            text-align: justify;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .navigate-button {
+            padding: 8px 15px;
+            border: none;
+            background-color: transparent;
+            color: #ecf0f1;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            border: 1px solid #ecf0f1;
+        }
+
+        .navigate-button:hover {
+            background-color: rgba(236, 240, 241, 0.3);
+        }
+
+        audio {
+            display: none; /* Menyembunyikan elemen audio */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page active" id="page1">
+            <div class="note-container">
+                <h1>Catatan 1</h1>
+                <p>Prihal apapun yg membuat mu sakit, lelah, kecewa apapun itu aku minta maaf, maaf atas kesalahan yg ku perbuat, aku sadar kesalahanku membuat mu lelah, kamu benar aku hanya membawa luka bagimu dan kamu benar aku jauh dari mu yang bahkan di saat kamu membutuhkan ku aku hanya bisa berkata2 manis untuk membuat mu semanangat, aku ceroboh sampai berlagak bisa bertarung dengan masa lalumu tanpa sadar kalo aku jauh darimu, dan sekarang semuanya kacau semua karna 1 kecerobohan ku, meskipun beribu ribu kali aku meminta maaf aku tau kamu bosan dan lelah mendengarnya aku terlalu berisik untukmu, aku terlalu berlebihan mencintaimu, tidak apa muak lah dengan ku sesukamu aku pantas mendapatkan itu, semoga sabar mu, kerja keras mu perjuangan seorang diri akan mendapatkan hal lebih baik di kemudian hari aku yakin kamu layak mendapat kebahagiaan lebih baik dari yg sekarang.</p>
+            </div>
+        </div>
+        <div class="page" id="page2">
+            <div class="note-container">
+                <h1>Catatan 2</h1>
+                <p> "Aku selalu bertanya pada diriku, apa yang salah dengan diriku? Apa yang membuatmu ragu padaku sampai saat ini? Begitu mirisnya diriku, begitu banyak kekuranganku. Sampai-sampai hal sekecil itu, hal sepele yang seharusnya aku peka dan sadar, ternyata aku begitu bodoh. Aku menyadari hal sepele itu begitu spesial buatmu, tapi aku terlalu lamban untuk mengerti.
+
+Aku sadar, aku banyak kekurangan dan kadang tidak bisa memahami hal-hal yang penting bagimu. Aku merasa bodoh karena tidak bisa menangkap isyarat-isyarat kecil yang kau berikan. Aku ingin bisa lebih baik, lebih peka, dan lebih perhatian. Aku ingin kamu tahu, meskipun aku sering membuat kesalahan, aku sungguh peduli padamu.
+
+Mungkin aku tidak sempurna, tapi aku ingin terus belajar dan memperbaiki diri. Setiap kali aku merasa gagal, aku selalu berusaha bangkit dan mencoba lagi. Aku berharap kamu bisa melihat usahaku dan mengerti betapa berartinya kamu bagiku. Aku mungkin bodoh, tapi aku bodoh yang sedang belajar.</p>
+            </div>
+        </div>
+        <div class="page" id="page3">
+            <div class="note-container">
+                <h1>Catatan 3</h1>
+                <p>Hai cantik. mungkin diantara laki laki yg kamu, temui, aku adalah laki laki yg paling biasa saja dari segi apapun itu. tapi jika kamu mengira aku adalah laki laki tidak pecundang dan ceroboh, kamu salah besar.aku selalu memperhatikanmu dengan cara yg mungkin tidak bisa kamu lihat mungkin aku sedikit berbeda dari laki laki ga pernah kamu temui, ya aku laki laki yg terkadang keras, egois dan memiliki sifat gengsi untuk menyangimu. aku ingin memberitahu banyak hal, tentang betapa aku mencintaimu dan semua rasa takut kehilangan yg aku punya, maaf untuk semua tingkah kekanak kanakanku selama membuktikan bahwa aku tulus mencintai.</p>
+            </div>
+        </div>
+        <div class="page" id="page4">
+            <div class="note-container">
+                <h1>Catatan 4</h1>
+                <p>haii wanita baikku. aku di sini cuma mau bilang. aku sangat bersyukur pernah di pertemukan dengan wanita sebaik dirimu. saat ini aku hanya ingin minta maaff kepadamu. maaf jika kelakuanmu membuatmu sekarang membenci ku. maaff jika kadang kelakuanku sering membuatmu marah bahkan malu. maaf jika aku sering memberikan rasa susah di hidupmu. saat ini aku di berikan posisi yang serba salah. aku dengan kesalahanku yang besar sehingga membuatmu membenciku. tapi sisi lain aku mempunyai rasa yang tidak bisa di ungkapkan dengan kata2. aku mintaa maaff ya sayangg. mengulang kisah bersamamu adalah hal yang akan ku nantikan sampai kapan pun . ijinkan aku membuktikan bahwa laki laki tulus itu benar2 adaa. aku tetap berusaha untuk menjadi yang kau inginkan. Terima kasi wanita baikku atas segala perhatianmu selama inii. semoga kita bisa di pertemukan kembali yaa cantikk. membuka lembaran baru yang tidak akan ada kata saling menyakiti lagi. sekali lagi terima kasi wanita baik.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function navigateToPage(pageNumber) {
+            var pages = document.querySelectorAll('.page');
+            pages.forEach(function(page, index) {
+                page.classList.remove('active');
+                if (index === pageNumber - 1) {
+                    page.classList.add('active');
+                }
+            });
+        }
+
+        function playAudio(pageNumber) {
+            var audioElements = document.querySelectorAll('audio');
+            audioElements.forEach(function(audio, index) {
+                audio.pause();
+                audio.currentTime = 0;
+                if (index === pageNumber - 1) {
+                    audio.play();
+                }
+            });
+        }
+
+        document.querySelectorAll('.navigate-button').forEach(function(button, index) {
+            button.addEventListener('click', function() {
+                navigateToPage(index + 1);
+                playAudio(index + 1);
+            });
+        });
+
+        // Autoplay audio for the initial page
+        document.addEventListener('DOMContentLoaded', function() {
+            playAudio(1);
+        });
+    </script>
+    <audio src="audio/alvyna1.mp3" autoplay loop></audio>
+    <audio src="audio/alvyna2.mp3"></audio>
+    <audio src="audio/alvyna3.mp3"></audio>
+    <audio src="audio/alvyna4.mp3"></audio>
+    <audio src="audio/alvyna5.mp3"></audio>
+    <audio src="audio/alvyna6.mp3"></audio>
+    <audio src="audio/alvyna7.mp3"></audio>
+    <audio src="audio/alvyna8.mp3"></audio>
+    <audio src="audio/alvyna9.mp3"></audio>
+</body>
+  </html>
+  
