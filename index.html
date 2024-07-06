@@ -125,32 +125,37 @@
         </div>
     </div>
     <audio class="hidden" id="backsound" autoplay loop>
-        <source src="audio/alvyna1.mp3" type="audio/mpeg">
-        <source src="audio/alvyna2.mp3" type="audio/mpeg">
-        <source src="audio/alvyna3.mp3" type="audio/mpeg">
-        <source src="audio/alvyna4.mp3" type="audio/mpeg">
-        <source src="audio/alvyna5.mp3" type="audio/mpeg">
-        <source src="audio/alvyna6.mp3" type="audio/mpeg">
-        <source src="audio/alvyna7.mp3" type="audio/mpeg">
-        <source src="audio/alvyna8.mp3" type="audio/mpeg">
-        <source src="audio/alvyna9.mp3" type="audio/mpeg">
+        <!-- This element will be dynamically updated -->
     </audio>
     <script>
-        function navigateToPage(pageNumber) {
-            var pages = document.querySelectorAll('.page');
-            pages.forEach(function(page, index) {
-                page.classList.remove('active');
-                if (index === pageNumber - 1) {
-                    page.classList.add('active');
-                }
-            });
+        // Array of available audio files
+        var audioFiles = [
+            'audio/alvyna1.mp3',
+            'audio/alvyna2.mp3',
+            'audio/alvyna3.mp3',
+            'audio/alvyna4.mp3',
+            'audio/alvyna5.mp3',
+            'audio/alvyna6.mp3',
+            'audio/alvyna7.mp3',
+            'audio/alvyna8.mp3',
+            'audio/alvyna9.mp3'
+        ];
+
+        // Get the audio element
+        var audioElement = document.getElementById('backsound');
+
+        // Function to play random audio
+        function playRandomAudio() {
+            var randomIndex = Math.floor(Math.random() * audioFiles.length);
+            audioElement.src = audioFiles[randomIndex];
+            audioElement.play();
         }
+
+        // Play first audio on page load
+        playRandomAudio();
+
+        // Event listener to play a new random audio file when the current one ends
+        audioElement.addEventListener('ended', playRandomAudio);
     </script>
-    <div class="navigation">
-        <button class="navigate-button" onclick="navigateToPage(1)">1</button>
-        <button class="navigate-button" onclick="navigateToPage(2)">2</button>
-        <button class="navigate-button" onclick="navigateToPage(3)">3</button>
-        <button class="navigate-button" onclick="navigateToPage(4)">4</button>
-    </div>
 </body>
-            </html>
+    </html>
