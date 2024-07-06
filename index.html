@@ -91,10 +91,6 @@
         .navigate-button:hover {
             background-color: rgba(236, 240, 241, 0.3);
         }
-
-        audio.hidden {
-            display: none; /* Menyembunyikan elemen audio */
-        }
     </style>
 </head>
 <body>
@@ -108,7 +104,11 @@
         <div class="page" id="page2">
             <div class="note-container">
                 <h1>Catatan 2</h1>
-                <p> Aku selalu bertanya kepada diriku apa yg salah dariku apa yg membuat dirimu ragu padaku sampai saat ini, begitu mirisnya diriku begitu banyak kekuranganku sampai2 hall sekecil itu hal sepele yg harusnya aku peka dan sadar ternyata aku begitu bodoh, aku menyadari hall sepele itu sepesil buat kamu tapi apa? Im stupid haha.</p>
+                <p>"Aku selalu bertanya pada diriku, apa yang salah dengan diriku? Apa yang membuatmu ragu padaku sampai saat ini? Begitu mirisnya diriku, begitu banyak kekuranganku. Sampai-sampai hal sekecil itu, hal sepele yang seharusnya aku peka dan sadar, ternyata aku begitu bodoh. Aku menyadari hal sepele itu begitu spesial buatmu, tapi aku terlalu lamban untuk mengerti.
+
+Aku sadar, aku banyak kekurangan dan kadang tidak bisa memahami hal-hal yang penting bagimu. Aku merasa bodoh karena tidak bisa menangkap isyarat-isyarat kecil yang kau berikan. Aku ingin bisa lebih baik, lebih peka, dan lebih perhatian. Aku ingin kamu tahu, meskipun aku sering membuat kesalahan, aku sungguh peduli padamu.
+
+Mungkin aku tidak sempurna, tapi aku ingin terus belajar dan memperbaiki diri. Setiap kali aku merasa gagal, aku selalu berusaha bangkit dan mencoba lagi. Aku berharap kamu bisa melihat usahaku dan mengerti betapa berartinya kamu bagiku. Aku mungkin bodoh, tapi aku bodoh yang sedang belajar.</p>
             </div>
         </div>
         <div class="page" id="page3">
@@ -123,39 +123,29 @@
                 <p>haii wanita baikku. aku di sini cuma mau bilang. aku sangat bersyukur pernah di pertemukan dengan wanita sebaik dirimu. saat ini aku hanya ingin minta maaff kepadamu. maaf jika kelakuanmu membuatmu sekarang membenci ku. maaff jika kadang kelakuanku sering membuatmu marah bahkan malu. maaf jika aku sering memberikan rasa susah di hidupmu. saat ini aku di berikan posisi yang serba salah. aku dengan kesalahanku yang besar sehingga membuatmu membenciku. tapi sisi lain aku mempunyai rasa yang tidak bisa di ungkapkan dengan kata2. aku mintaa maaff ya sayangg. mengulang kisah bersamamu adalah hal yang akan ku nantikan sampai kapan pun . ijinkan aku membuktikan bahwa laki laki tulus itu benar2 adaa. aku tetap berusaha untuk menjadi yang kau inginkan. Terima kasi wanita baikku atas segala perhatianmu selama inii. semoga kita bisa di pertemukan kembali yaa cantikk. membuka lembaran baru yang tidak akan ada kata saling menyakiti lagi. sekali lagi terima kasi wanita baik.</p>
             </div>
         </div>
+        <div class="page" id="page5">
+            <div class="note-container">
+                <h1>Catatan 5</h1>
+                <p>Kamu adalah sosok wanita yang luar biasa setelah ibuku. Sungguh kuat tulangmu dalam menghadapi takdir yang Allah berikan kepadamu. Bahkan, kamu lebih hebat dariku. Aku beruntung memilikimu. Jika boleh aku berdoa:"Ya Allah, tolong kuatkan wanita yang saat ini berada di sampingku. Berikan dia kekuatan untuk menghadapi segala ujian. Berikan dia ketenangan, meski hanya sedikit, agar aku dapat melihat senyumannya lagi. Berikan dia cahaya dalam hatinya dan lindungi dia selalu. Aamiin." Kamu selalu menjadi inspirasiku. Keteguhanmu dan semangatmu membuatku semakin mengagumimu setiap hari. Setiap tantangan yang kamu hadapi dengan keberanian, setiap langkah yang kamu ambil dengan penuh keyakinan, semuanya adalah bukti betapa luar biasanya dirimu. Aku berharap kita bisa melalui setiap rintangan bersama, saling mendukung dan menguatkan. Karena bersamamu, aku merasa lebih kuat dan lebih bersemangat menjalani hidup.</p>
+            </div>
+        </div>
     </div>
-    <audio class="hidden" id="backsound" autoplay loop>
-        <!-- This element will be dynamically updated -->
-    </audio>
+    <div class="navigation">
+        <button class="navigate-button" onclick="navigateToPage(1)">1</button>
+        <button class="navigate-button" onclick="navigateToPage(2)">2</button>
+        <button class="navigate-button" onclick="navigateToPage(3)">3</button>
+        <button class="navigate-button" onclick="navigateToPage(4)">4</button>
+        <button class="navigate-button" onclick="navigateToPage(5)">5</button>
+    </div>
     <script>
-        // Array of available audio files
-        var audioFiles = [
-            'audio/alvyna1.mp3',
-            'audio/alvyna2.mp3',
-            'audio/alvyna3.mp3',
-            'audio/alvyna4.mp3',
-            'audio/alvyna5.mp3',
-            'audio/alvyna6.mp3',
-            'audio/alvyna7.mp3',
-            'audio/alvyna8.mp3',
-            'audio/alvyna9.mp3'
-        ];
-
-        // Get the audio element
-        var audioElement = document.getElementById('backsound');
-
-        // Function to play random audio
-        function playRandomAudio() {
-            var randomIndex = Math.floor(Math.random() * audioFiles.length);
-            audioElement.src = audioFiles[randomIndex];
-            audioElement.play();
+        // Function to navigate between pages
+        function navigateToPage(pageNumber) {
+            var pages = document.querySelectorAll('.page');
+            pages.forEach(function(page) {
+                page.classList.remove('active');
+            });
+            document.getElementById('page' + pageNumber).classList.add('active');
         }
-
-        // Play first audio on page load
-        playRandomAudio();
-
-        // Event listener to play a new random audio file when the current one ends
-        audioElement.addEventListener('ended', playRandomAudio);
     </script>
 </body>
 </html>
