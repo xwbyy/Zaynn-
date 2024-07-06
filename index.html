@@ -92,7 +92,7 @@
             background-color: rgba(236, 240, 241, 0.3);
         }
 
-        audio {
+        audio.hidden {
             display: none; /* Menyembunyikan elemen audio */
         }
     </style>
@@ -108,11 +108,7 @@
         <div class="page" id="page2">
             <div class="note-container">
                 <h1>Catatan 2</h1>
-                <p> "Aku selalu bertanya pada diriku, apa yang salah dengan diriku? Apa yang membuatmu ragu padaku sampai saat ini? Begitu mirisnya diriku, begitu banyak kekuranganku. Sampai-sampai hal sekecil itu, hal sepele yang seharusnya aku peka dan sadar, ternyata aku begitu bodoh. Aku menyadari hal sepele itu begitu spesial buatmu, tapi aku terlalu lamban untuk mengerti.
-
-Aku sadar, aku banyak kekurangan dan kadang tidak bisa memahami hal-hal yang penting bagimu. Aku merasa bodoh karena tidak bisa menangkap isyarat-isyarat kecil yang kau berikan. Aku ingin bisa lebih baik, lebih peka, dan lebih perhatian. Aku ingin kamu tahu, meskipun aku sering membuat kesalahan, aku sungguh peduli padamu.
-
-Mungkin aku tidak sempurna, tapi aku ingin terus belajar dan memperbaiki diri. Setiap kali aku merasa gagal, aku selalu berusaha bangkit dan mencoba lagi. Aku berharap kamu bisa melihat usahaku dan mengerti betapa berartinya kamu bagiku. Aku mungkin bodoh, tapi aku bodoh yang sedang belajar.</p>
+                <p> Aku selalu bertanya kepada diriku apa yg salah dariku apa yg membuat dirimu ragu padaku sampai saat ini, begitu mirisnya diriku begitu banyak kekuranganku sampai2 hall sekecil itu hal sepele yg harusnya aku peka dan sadar ternyata aku begitu bodoh, aku menyadari hall sepele itu sepesil buat kamu tapi apa? Im stupid haha.</p>
             </div>
         </div>
         <div class="page" id="page3">
@@ -128,6 +124,17 @@ Mungkin aku tidak sempurna, tapi aku ingin terus belajar dan memperbaiki diri. S
             </div>
         </div>
     </div>
+    <audio class="hidden" id="backsound" autoplay loop>
+        <source src="audio/alvyna1.mp3" type="audio/mpeg">
+        <source src="audio/alvyna2.mp3" type="audio/mpeg">
+        <source src="audio/alvyna3.mp3" type="audio/mpeg">
+        <source src="audio/alvyna4.mp3" type="audio/mpeg">
+        <source src="audio/alvyna5.mp3" type="audio/mpeg">
+        <source src="audio/alvyna6.mp3" type="audio/mpeg">
+        <source src="audio/alvyna7.mp3" type="audio/mpeg">
+        <source src="audio/alvyna8.mp3" type="audio/mpeg">
+        <source src="audio/alvyna9.mp3" type="audio/mpeg">
+    </audio>
     <script>
         function navigateToPage(pageNumber) {
             var pages = document.querySelectorAll('.page');
@@ -138,39 +145,12 @@ Mungkin aku tidak sempurna, tapi aku ingin terus belajar dan memperbaiki diri. S
                 }
             });
         }
-
-        function playAudio(pageNumber) {
-            var audioElements = document.querySelectorAll('audio');
-            audioElements.forEach(function(audio, index) {
-                audio.pause();
-                audio.currentTime = 0;
-                if (index === pageNumber - 1) {
-                    audio.play();
-                }
-            });
-        }
-
-        document.querySelectorAll('.navigate-button').forEach(function(button, index) {
-            button.addEventListener('click', function() {
-                navigateToPage(index + 1);
-                playAudio(index + 1);
-            });
-        });
-
-        // Autoplay audio for the initial page
-        document.addEventListener('DOMContentLoaded', function() {
-            playAudio(1);
-        });
     </script>
-    <audio src="audio/alvyna1.mp3" autoplay loop></audio>
-    <audio src="audio/alvyna2.mp3"></audio>
-    <audio src="audio/alvyna3.mp3"></audio>
-    <audio src="audio/alvyna4.mp3"></audio>
-    <audio src="audio/alvyna5.mp3"></audio>
-    <audio src="audio/alvyna6.mp3"></audio>
-    <audio src="audio/alvyna7.mp3"></audio>
-    <audio src="audio/alvyna8.mp3"></audio>
-    <audio src="audio/alvyna9.mp3"></audio>
+    <div class="navigation">
+        <button class="navigate-button" onclick="navigateToPage(1)">1</button>
+        <button class="navigate-button" onclick="navigateToPage(2)">2</button>
+        <button class="navigate-button" onclick="navigateToPage(3)">3</button>
+        <button class="navigate-button" onclick="navigateToPage(4)">4</button>
+    </div>
 </body>
-  </html>
-  
+            </html>
